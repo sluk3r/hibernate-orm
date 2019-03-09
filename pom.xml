@@ -35,7 +35,7 @@
         <module>hibernate-proxool</module>
         <module>hibernate-envers</module>
         <module>hibernate-jdbc3-testing</module>
-        <module>hibernate-infinispan</module>
+        <!--<module>hibernate-infinispan</module>-->
 <!--
     Need to scope bytecode providers first...
         <module>bytecode-cglib</module>
@@ -73,6 +73,42 @@
 
     <profiles>       
         <profile>
+      <id>jboss-public-repository</id>
+      <repositories>
+        <repository>
+          <id>jboss-public-repository-group</id>
+          <name>JBoss Public Maven Repository Group</name>
+          <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </snapshots>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>jboss-public-repository-group</id>
+          <name>JBoss Public Maven Repository Group</name>
+          <url>https://repository.jboss.org/nexus/content/groups/public-jboss/</url>
+          <layout>default</layout>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </snapshots>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+    
+        <profile>
             <id>jdk6-modules</id>
             <activation>
                 <property>
@@ -85,7 +121,7 @@
                 <module>hibernate-jdbc4-testing</module>
             </modules>
         </profile>            
-        <profile>
+        <!--<profile>
             <id>docs</id>
             <activation>
                 <property>
@@ -97,6 +133,6 @@
                 <module>hibernate-documentation</module>
                 <module>hibernate-distribution</module>
             </modules>
-        </profile>
+        </profile>-->
     </profiles>
 </project>
